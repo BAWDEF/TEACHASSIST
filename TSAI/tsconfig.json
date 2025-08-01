@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "composite": true, // <--- ADD THIS LINE (or ensure it's here)
+    "tsBuildInfoFile": "./node_modules/.tsconfig.tsbuildinfo",
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    // "noEmit":false , // <--- REMOVE OR COMMENT OUT THIS LINE (or set to false)
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // ALIAS AND BASEURL
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "TSAI-backend/src/generate-assessment.ts"],
+  "references": [
+    { "path": "./tsconfig.node.json" } // Keep this reference
+  ]
+}
